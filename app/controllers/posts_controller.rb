@@ -9,7 +9,7 @@ class PostsController < ApplicationController
       if(@post.save)
         f.html { redirect_to "/home", notice: "Post Created!" }
       else
-        f.html { redirect_to "/home", notice: "Post too long"}
+        f.html { redirect_to "/home", notice: "Post did not save"}
       end
     end
   end
