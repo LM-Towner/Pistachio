@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
-  get 'pages/index'
+  #define root URL
+  root 'pages#index'
 
-  get 'pages/home'
+  get 'home' => 'pages#home'
 
-  get 'pages/profile'
+  get 'profile' => 'pages#profile'
 
-  get 'pages/explore'
+  get 'explore' => 'pages#explore'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
