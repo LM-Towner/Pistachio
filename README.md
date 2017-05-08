@@ -15,6 +15,9 @@ as work with Ruby on Rails 5.
 
 ##Technologies Used
 Ruby on Rails
+
 PostgreSQL
+
 Bootstrap
+
 RSPEC
