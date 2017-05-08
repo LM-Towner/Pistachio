@@ -6,8 +6,11 @@ as work with Ruby on Rails 5.
 ##Users
 
 -User can signup
+
 -Follow Friends
+
 -Unfollow Friends
+
 -Write "Pistachio" stories 140 characters or less
 
 ##Technologies Used
