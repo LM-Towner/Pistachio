@@ -8,7 +8,10 @@
         <div class="col-sm-11">
             <p class="post-title">
                 <span class="post-owner">
-                    <a href="/user/<%= User.find(@post.user_id).username %>"><%= User.find(@post.user_id).username %></a>
+                  <% if signed_in? %>
+                    <a href="/user/<%= User.find(@post.user_id).username %>">
+                      <% end %>
+                      <%= User.find(@post.user_id).username %></a>
                 </span>
                 <span class="post-creation">-
                     <%=long_form_date(@post.created_at)%>
