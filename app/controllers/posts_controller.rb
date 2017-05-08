@@ -7,12 +7,13 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     respond_to do |f|
       if(@post.save)
-        f.html { redirect_to "", notice: "Post Created!" }
+        f.html { redirect_to "/home", notice: "Post Created!" }
       else
-        f.html { redirect_to "", notice: "Error: Post Not Saved"}
+        f.html { redirect_to "/home", notice: "Post did not save"}
       end
     end
   end
+  
   private
   def post_params
     params.require(:post).permit(:user_id,:content)

@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :posts
-  
+  resources :relationships
+
   #define root URL
-  root 'pages#index'
+  root 'pages#explore'
 
   get '/home' => 'pages#home'
 

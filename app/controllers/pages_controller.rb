@@ -6,20 +6,30 @@ class PagesController < ApplicationController
 
   def home
     @posts = Post.all
+    @newPost= Post.new
+    following = []
+    for @following in current_user.following do
+      following.push(@following.id)
+    end
   end
 
   def profile
-    @posts = Post.all.where("user_id = ?", User.find_by_username(params[:id]).id)
+    @posts = (User.find_by_username(params[:id])).posts
     @newPost = Post.new
+
+    @toFollow = User.all.last(5)
     if(User.find_by_username(params[:id]))
       @username = params[:id]
     else
-      redirect_to root_path, :notice => "User not found!"
+      redirect_to root_path, :notice=> "User not found!"
     end
+    @followers = current_user.passive_relationships
   end
 
   def explore
     @posts = Post.all
+    @newPost = Post.new
+    @toFollow = User.all.last(5)
   end
 
 end

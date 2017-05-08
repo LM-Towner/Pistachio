@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <h5 style="color: grey; font-size: 125%;">Who to follow</h5>
+        <% for @user in @toFollow do %>
+        <p style="font-weight: bold; opacity: 0.85;">
+            <a href="/user/<%= @user.username %>"><%= @user.username %></a>
+        </p>
+        <% end %>
+    </div>
+</div>

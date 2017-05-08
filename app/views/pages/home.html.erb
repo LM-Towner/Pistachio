@@ -1,42 +1,48 @@
 <div class="row">
-  <div class="col-xs-3">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p>stats</p>
-      </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <p>Trends</p>
+    <div class="col-xs-3">
+        <div class="panel panel-default">
+            <div class="panel-image hide-panel-body">
+                <img src="/banner.jpg" class="panel-image-preview">
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-sm-2"><img src="/avatar.png" height=50px; width="50px" class="rounded-img" "home-avatar"></div>
+                    <div class="col-sm-10">
+                        <h4 style="text-align: center;"><%=current_user.username.capitalize%></h4>
+                    </div>
+                    <div class="col-sm-12" style="margin-top: 10px;">
+                        <div class="col-sm-6" style="font-size: 80%; opacity: 0.7;">
+                            TWEETS<br>
+                            <h6 style="color: #93c572; font-size: 200%; opacity: 1.2"><%=current_user.posts.count%></h6>
+                        </div>
+                        <div class="col-sm-6" style="font-size: 80%; opacity: 0.7;">FOLLOWERS<br>
+                            <h6 style="color: #93c572; font-size: 200%; opacity: 1.2"><%=current_user.followers.count%></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!--  Trending box-->
+        <%= render '/components/trend_container' %><br><br>
+
+    </div>
+
+    <div class="col-xs-6">
+        <!--  Post Form-->
+        <%= render '/components/post_form' %><br><br>
+        <!--  Display Post-->
+        <%= render '/components/display_post' %>
+        <!--  icons-->
+        <%= render '/components/icon' %>
+    </div>
+    <div class="col-xs-3">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p style="opacity: 0.5; font-size: 75%;">&copy; 2017 Pistachio<br>
+                    Created by LMTowner
+                    <a href="https://linkedin.com/in/lmtowner">Linkedin</a><br></p>
+            </div>
         </div>
-  </div>
-  <div class="col-xs-6">
-    <% for @p in @posts %>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p><%= @p.content %></p>
-      </div>
-      </div>
-      <% end %>
-  </div>
-  <div class="col-xs-3">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p>about</p>
-      </div>
-      </div>
-  </div>
-</div>
-
-<!-- begin row 2.  -->
-
-<div class="row">
-  <div class="col-xs-3">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p>Trends</p>
-      </div>
-      </div>
-  </div>
+    </div>
 </div>
