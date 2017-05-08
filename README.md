@@ -3,7 +3,7 @@
 This application is a twitter clone used to practice my front-end skills as well
 as work with Ruby on Rails 5.
 
-##Users
+## Users
 
 -User can signup
 
@@ -13,7 +13,7 @@ as work with Ruby on Rails 5.
 
 -Write "Pistachio" stories 140 characters or less
 
-##Technologies Used
+## Technologies Used
 Ruby on Rails
 
 PostgreSQL
