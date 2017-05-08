@@ -1,42 +1,37 @@
 <div class="row">
-  <div class="col-xs-12">
-    <div class="jumbotron">
-      <%= @username %>
+    <div class="col-xs-3">
+        <div class="col-sm-12" style="margin-top: -20px;">
+            <img src="/avatar.png" height="100px" width="100px" class="rounded-img">
+        </div>
+        <div class="col-sm-12">
+            <h3 style="font-weight: bold;"><%= params[:id] %></h3>
+            <p>
+                Web Developer
+                <a href="http://www.lmtowner.me">http://www.lmtowner.me</a>
+            </p>
+            <%= render '/components/friends' %>
+        </div>
     </div>
-  </div>
+    <div class="col-xs-6">
+        <%= render '/components/post_form' %><br><br>
 
-</div>
+        <%= render '/components/display_post' %>
+        <%= render '/components/icon' %>
+    </div>
 
+    <div class="col-xs-3">
 
-<!-- begin row 2 -->
-<div class="row">
-  <div class="col-xs-3">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p>Profile</p>
-      </div>
-      </div>
-  </div>
-  <div class="col-xs-6">
-    <%= render '/components/post_form' %>
-    <% for @p in @posts %>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p><%= @p.content %></p>
-      </div>
-      </div>
-      <% end %>
-  </div>
-  <div class="col-xs-3">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p>Who to follow</p>
-      </div>
-      </div>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <p>Trends</p>
+        <%= render '/components/follow_button', :user => User.find_by_username(params[:id]) %>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h5 style="color: grey; font-size: 125%;">Who to follow</h5>
+                <% for @u in @toFollow do %>
+                <p style="font-weight: bold; opacity: 0.85;">
+                    <a href="/user/<%= @u.username %>"><%= @u.username %></a>
+                </p>
+                <% end %>
+            </div>
         </div>
-        </div>
-  </div>
-</div>
+        <%= render '/components/trend_container' %><br><br>
+
+    </div>

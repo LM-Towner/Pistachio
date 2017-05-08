@@ -39,6 +39,7 @@
  .post-content {
      text-align: left;
      margin-left: 15px;
+     word-wrap: break-word;
  }
  .post-links {
      text-align: center;
@@ -87,4 +88,9 @@
      width: 100%;
      height: 500px;
      margin-top: -21px;
+ }
+
+ .green-button{
+   background-color: #93c572;
+   border-color: black;
  }
