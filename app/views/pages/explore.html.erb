@@ -16,7 +16,10 @@
 
     </div>
     <div class="col-xs-6">
-        <%= render '/components/post_form' %><% if user_signed_in? %>
+      <% if user_signed_in? %>
+      <%= render '/components/post_form' %>
+      <% end %>
+        <% if user_signed_in? %>
         <br>
         <% end %>
         <br>
