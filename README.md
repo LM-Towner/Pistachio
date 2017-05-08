@@ -1,24 +1,23 @@
-# README
+## Pistachios
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is a twitter clone used to practice my front-end skills as well
+as work with Ruby on Rails 5.
 
-Things you may want to cover:
+## Users
 
-* Ruby version
+-User can signup
 
-* System dependencies
+-Follow Friends
 
-* Configuration
+-Unfollow Friends
 
-* Database creation
+-Write "Pistachio" stories 140 characters or less
 
-* Database initialization
+## Technologies Used
+Ruby on Rails
 
-* How to run the test suite
+PostgreSQL
 
-* Services (job queues, cache servers, search engines, etc.)
+Bootstrap
 
-* Deployment instructions
-
-* ...
+RSPEC
