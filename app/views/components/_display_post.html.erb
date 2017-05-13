@@ -18,6 +18,11 @@
                     <%=time((@post.created_at).localtime)%></span>
             </p>
             <p class="post-content"><%= @post.content %></p>
+              <%if current_user.id == @post.user_id %>
+            <%= link_to 'Destroy', post_path(@post),
+            data: {:confirm => 'Are you sure?'}, :method => :delete %>
+            <% end %>
+
         </div>
 
         <div class="col-sm-12">

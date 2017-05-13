@@ -13,7 +13,13 @@ class PostsController < ApplicationController
       end
     end
   end
-  
+
+  def destroy
+    @post = Post.find_by(id: params[:id])
+   @post.destroy if @post.user == current_user
+   redirect_to :back
+  end
+
   private
   def post_params
     params.require(:post).permit(:user_id,:content)
