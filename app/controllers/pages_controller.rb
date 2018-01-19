@@ -23,7 +23,8 @@ class PagesController < ApplicationController
     else
       redirect_to root_path, :notice=> "User not found!"
     end
-    @followers = current_user.passive_relationships
+    @followers = current_user.followers
+    @following = current_user.following
   end
 
   def explore

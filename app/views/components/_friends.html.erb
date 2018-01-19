@@ -6,7 +6,7 @@
     <div class="panel-body">
         <p style="font-weight: bold; opacity: 0.85;">
             <center>
-                <a href="/user/<%= follower.follower.username %>"><%= "@#{follower.follower.username}" %></a>
+                <a href="/user/<%= follower.username %>"><%= "@#{follower.username}" %></a>
             </center>
         </p>
     </div>
@@ -17,11 +17,11 @@
     <center>
         <h6>Following</h6>
     </center>
-    <% @followers.each do |follower| %>
+    <% @following.each do |follower| %>
     <div class="panel-body">
         <p style="font-weight: bold; opacity: 0.85;">
             <center>
-                <a href="/user/<%= follower.followed.username %>"><%= "@#{follower.followed.username}" %></a>
+                <a href="/user/<%= follower.username %>"><%= "@#{follower.username}" %></a>
             </center>
         </p>
     </div>
